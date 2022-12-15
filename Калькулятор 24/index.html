@@ -1,0 +1,55 @@
+
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Калькулятор</title>
+</head>
+<body>
+<script type = "text/javascript"src="Main.js">
+</script>		
+
+    <table align="left" style="height: 100px; width: 10px; padding-top: 40px"/>
+	<tr>
+	<td colspan="4">
+	
+<input type = "text" id = "result" style = "height: 60px; width: 300px; font-size: 20px"/>
+</td>
+</tr>
+<tr>
+     <td> <input type="button" id ="seven" value= "7" onclick = "inputExp('7')"/> </td>
+     <td> <input type="button" id ="eight" value= "8" onclick = "inputExp('8')"/></td>
+     <td> <input type="button" id ="nine" value= "9" onclick = "inputExp('9')"/></td>
+     <td> <input type="button" id ="plus" value= "+" onclick = "znak('+')"/></td>
+	 <td> <input type="button" id ="sqrt" value= "√" onclick = "inputExp('√')"/></td>
+     </tr> 
+      
+
+  <tr>
+     <td> <input type="button" id ="four" value= "4" onclick = "inputExp('4')"/> </td>
+     <td> <input type="button" id ="five" value= "5" onclick = "inputExp('5')"/></td>
+     <td> <input type="button" id ="six" value= "6" onclick = "inputExp('6')"/></td>
+     <td> <input type="button" id ="minus" value= "-" onclick = "znak('-')"/></td>
+	 <td> <input type="button" id ="exponent" value= "^" onclick = "znak('^')"/></td>
+     </tr> 
+      
+     <tr>
+     <td> <input type="button" id ="one" value= "1" onclick = "inputExp('1')"/> </td>
+     <td> <input type="button" id ="two" value= "2" onclick = "inputExp('2')"/></td>
+     <td> <input type="button" id ="three" value= "3" onclick = "inputExp('3')"/></td>
+     <td> <input type="button" id ="multi" value= "*" onclick = "znak('*')"/></td>
+	 <td> <input type="button" id ="percentage" value= "%" onclick = "inputExp('%')"/></td>
+     </tr> 
+	  
+	  	  
+     <tr>
+     <td> <input type="button" id ="zero" value= "0" onclick = "inputExp('0')"/> </td>
+     <td> <input type="button" id ="ClearAll" value= "C" onclick = "ClearAll()"/></td>
+     <td> <input type="button" id ="ClearLastOne" value= "CE" onclick = "ClearLastOne()"/></td>
+	 <td> <input type="button" id ="division" value= "÷" onclick = "znak('÷')"/></td>
+	 <td> <input type="button" id ="equal" value= "=" onclick = "equal()"/></td>
+	 <td> <input type="button" id ="dot" value= "." onclick = "tochka('.')"/></td>
+     </tr> 
+
+
+</body>
+</html>
