@@ -1,4 +1,7 @@
 var ele;
+
+
+
      function ClearAll()
     {
      ele = document.getElementById("result");
@@ -20,10 +23,7 @@ var ele;
             ele = document.getElementById("result");
             ele.value += symbol;
         }
-		
 
-   
-   
    
    
    
@@ -129,10 +129,66 @@ var ele;
  {
 	 var expresion = document.getElementById("result");
 	 var exp = expresion.value; 
-     const term = exp.split(/\+|\-|\*|\÷|\^/);
-	 alert (term [0])
-	 const exparr = exp.split('');
-	 
+	 TrParse();
 	 
  }
- 
+
+function TrParse()
+{
+     ele = document.getElementById("result");
+	 var exp = ele.value; 
+	 const exparr = exp.split('');
+     const term = exp.split(/\+|\-|\*|\÷|\^/);
+	 
+	 for (let i = 0; i < term.length; i++)
+	 {
+		 for (let j = 0; j < exparr.length; j++)
+		 {
+			 alert ('equal')
+		 }
+		 alert('cicl')
+	 }
+
+
+}
+
+function tochka()
+{
+	var cikl = 0;
+	ele = document.getElementById("result")
+	var exp = ele.value;
+	const term = exp.split(/\+|\-|\*|\÷|\^/);
+	// alert ('term='+term)
+	var lsterm = term [ term.length - 1 ];
+	// alert (lsterm+'=lsterm')
+	const lstermch = lsterm.split('');
+	// alert ('lstermch=' + lstermch[0])
+	for (var i = 0; i < lstermch.length; i++)
+	{
+		if (lstermch [0] == '.')
+		{
+			alert ('ERROR1')
+			break;
+		}
+		else 
+		{
+			if (lstermch[i] == '.')
+			{
+				alert ('ERROR2')
+				break;
+			}
+			else
+			{
+
+				cikl++;
+			}				
+		}
+		
+	}
+	alert (lstermch.length)
+	alert (cikl)
+	if (cikl == lstermch.length)
+	{
+		inputExp('.');
+	}
+}
