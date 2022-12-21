@@ -1,38 +1,50 @@
-var ele;
+var inele, expele, rend, res, elestr;
+
+   function result()
+   {
+	   inele = document.getElementById("result");
+	   expele = inele.value;
+	   inele.value = "";
+	   expele = inele.value;
+   }   
 
 
 
-     function ClearAll()
-    {
-     ele = document.getElementById("result");
-     ele.value = "";
-     }
-	 
-	 
-   function ClearLastOne()
-  {
-    ele = document.getElementById("result");
-    var res = ele.value;
-	var rend = res.length - 1;
-	res = ele.value.slice(0,rend);
-	ele.value = res;
+
+   function ClearAll()
+   {
+      inele = document.getElementById("result");
+	  expele = inele.value;
+	  alert (expele)
+      inele.value = "";
+	  expele = inele.value;
+	  alert (expele)
    }
 
-   function inputExp(symbol) 
-        {
-            ele = document.getElementById("result");
-            ele.value += symbol;
-        }
-
    
-   
-   
-   
-   function znak(symbol)
+   function ClearLastOne()
     {
+      inele = document.getElementById("result");
+      expele = inele.value;
+	  rend = expele.length - 1;
+	  res = inele.value.slice(0,rend);
+      inele.value = res;
+    }
 
-	    ele = document.getElementById("result");
-		var elestr = ele.value;
+
+
+   function inputExp(symbol) 
+    {
+        inele = document.getElementById("result");
+        inele.value += symbol;
+	}
+
+	
+   function znak(symbol)
+      {
+
+	    inele = document.getElementById("result");
+		var elestr = inele.value;
 
 		const znakarr = new Array ('+','-','^','*','÷');
 
@@ -46,54 +58,52 @@ var ele;
 		 var lstele = elestr.lastIndexOf(znakarr[i]);
 
 		if (lstele == elestr.length - 1)
-	    {
-		  //alert ("true1") 			
+	    { 			
 		  c = true;
           break;	
-
 	    }
 		
 	    else 
 	   {
 
 		   if (b == true)
-		   {
-			//  alert("true2")			   
+		   {			   
 			  c = true;
 			  break;
-		    }
+		   }
+		   
 		    else 
 		   {
-			  //alert("false1")
 			  c = false;			  
 			  break;
-
 		    }
 	    } 
       }
-	   // alert (c+'=c')
+
 	       if (c == true)
 		 {
-		//	 alert ('replace')
 			ClearLastOne();
  			inputExp(symbol);
 		 }
+		 
 		 else 
 		 {
-			// alert ('new')
 			 inputExp(symbol);
 		 }
-     }
+    } 
+	
+	function tochka()
+   {
+
+    }
 
 
-
-   
- 		function check()
- {
+    function check()
+       {
 	    var cikl = 0;
 		const znakarr = new Array ('+','-','^','*','÷');	
-	    ele = document.getElementById("result");
-		var elestr = ele.value;
+	    inele = document.getElementById("result");
+		var elestr = inele.value;
 				
         for (let j = 0; j < znakarr.length; j++)
 	    {		
@@ -108,7 +118,6 @@ var ele;
 	    }
 	    else 
 	    { 
-	//alert ('знак не совпадает, проверка следующего')
 			var b = 0;	
 	    }
        }
@@ -120,9 +129,8 @@ var ele;
 		{
 			return false;
 		}
-	  // alert ("значение функции чек = "+b);
 
- }
+        }
  
  
  function equal()
@@ -135,8 +143,8 @@ var ele;
 
 function TrParse()
 {
-     ele = document.getElementById("result");
-	 var exp = ele.value; 
+     inele = document.getElementById("result");
+	 var exp = inele.value; 
 	 const exparr = exp.split('');
      const term = exp.split(/\+|\-|\*|\÷|\^/);
 	 
@@ -144,9 +152,8 @@ function TrParse()
 	 {
 		 for (let j = 0; j < exparr.length; j++)
 		 {
-			 alert ('equal')
+
 		 }
-		 alert('cicl')
 	 }
 
 
@@ -154,41 +161,6 @@ function TrParse()
 
 function tochka()
 {
-	var cikl = 0;
-	ele = document.getElementById("result")
-	var exp = ele.value;
-	const term = exp.split(/\+|\-|\*|\÷|\^/);
-	// alert ('term='+term)
-	var lsterm = term [ term.length - 1 ];
-	// alert (lsterm+'=lsterm')
-	const lstermch = lsterm.split('');
-	// alert ('lstermch=' + lstermch[0])
-	for (var i = 0; i < lstermch.length; i++)
-	{
-		if (lstermch [0] == '.')
-		{
-			alert ('ERROR1')
-			break;
-		}
-		else 
-		{
-			if (lstermch[i] == '.')
-			{
-				alert ('ERROR2')
-				break;
-			}
-			else
-			{
 
-				cikl++;
-			}				
-		}
-		
-	}
-	alert (lstermch.length)
-	alert (cikl)
-	if (cikl == lstermch.length)
-	{
-		inputExp('.');
-	}
 }
+
