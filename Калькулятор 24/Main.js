@@ -1,11 +1,11 @@
-var inele, expele, rend, res, elestr;
+var inele, expele, rend, res, lstele;
 
-   function result()
+   function resulted()
    {
 	   inele = document.getElementById("result");
 	   expele = inele.value;
-	   inele.value = "";
-	   expele = inele.value;
+	   let rslt = [inele,expele]
+	   return rslt;
    }   
 
 
@@ -13,49 +13,42 @@ var inele, expele, rend, res, elestr;
 
    function ClearAll()
    {
-      inele = document.getElementById("result");
-	  expele = inele.value;
-	  alert (expele)
-      inele.value = "";
-	  expele = inele.value;
-	  alert (expele)
+	   let rslt = resulted ();
+      rslt[0].value = "";
+
    }
 
    
    function ClearLastOne()
     {
-      inele = document.getElementById("result");
-      expele = inele.value;
-	  rend = expele.length - 1;
-	  res = inele.value.slice(0,rend);
-      inele.value = res;
+      let rslt = resulted();
+	  rend = rslt[1].length - 1;
+	  res = rslt[0].value.slice(0,rend);
+      rslt[0].value = res;
     }
 
 
 
    function inputExp(symbol) 
     {
-        inele = document.getElementById("result");
-        inele.value += symbol;
+        let rslt = resulted();
+        rslt[0].value += symbol;
 	}
 
 	
    function znak(symbol)
-      {
-
-	    inele = document.getElementById("result");
-		var elestr = inele.value;
-
+   {
+	    let rslt = resulted();
+		let elestr = rslt[0].value;
 		const znakarr = new Array ('+','-','^','*','÷');
-
-		let b = new Boolean(check()); 
+		let b = (check()); 
 		//alert ("значение б после функции= "+b)        
 		let c= new Boolean();
 
 
       for (let i = 0; i < znakarr.length; i++)
 	  {		
-		 var lstele = elestr.lastIndexOf(znakarr[i]);
+		 lstele = elestr.lastIndexOf(znakarr[i]);
 
 		if (lstele == elestr.length - 1)
 	    { 			
@@ -92,22 +85,15 @@ var inele, expele, rend, res, elestr;
 		 }
     } 
 	
-	function tochka()
-   {
-
-    }
-
-
     function check()
        {
-	    var cikl = 0;
 		const znakarr = new Array ('+','-','^','*','÷');	
-	    inele = document.getElementById("result");
-		var elestr = inele.value;
+	    let rslt = resulted();
+		let elestr = rslt[0].value;
 				
         for (let j = 0; j < znakarr.length; j++)
 	    {		
-		 var lstele = elestr.lastIndexOf(znakarr[j]);
+		  lstele = elestr.lastIndexOf(znakarr[j]);
 		 //alert (lstele+" = "+(elestr.length))
 
 		 if (lstele == elestr.length - 1)
@@ -135,16 +121,13 @@ var inele, expele, rend, res, elestr;
  
  function equal()
  {
-	 var expresion = document.getElementById("result");
-	 var exp = expresion.value; 
-	 TrParse();
 	 
  }
 
 function TrParse()
 {
-     inele = document.getElementById("result");
-	 var exp = inele.value; 
+     let rslt = resulted();
+	 var exp = rslt[0].value; 
 	 const exparr = exp.split('');
      const term = exp.split(/\+|\-|\*|\÷|\^/);
 	 
